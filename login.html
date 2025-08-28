@@ -14,3 +14,40 @@
     </form>
 </body>
 </html>
+
+<!--
+O return false; nesse contexto serve como um bloqueio 
+do comportamento padrão do botão — especialmente quando 
+ele está dentro de um <form>.
+
+Por que isso acontece?
+Quando você coloca um botão dentro de um formulário HTML, 
+o navegador automaticamente tenta enviar o formulário ao 
+clicar, o que pode causar um recarregamento da página 
+antes que o JavaScript tenha tempo de redirecionar.
+
+O que "return false"; faz?
+- Impede o envio do formulário
+- Evita o recarregamento da página
+- Permite que o JavaScript execute completamente a função verificarLogin()
+
+Alternativas mais limpas
+Se quiser deixar o código ainda mais organizado, você pode 
+usar o evento onsubmit no próprio <form>:
+
+<form onsubmit="verificarLogin(); return false;">
+  <input type="email" id="email">
+  <input type="password" id="senha">
+  <button type="submit">Entrar</button>
+</form>
+
+Ou, melhor ainda, usar JavaScript moderno com addEventListener:
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Impede o envio do formulário
+  verificarLogin();   // Executa sua lógica
+});
+
+Assim você separa o HTML da lógica JavaScript, o que é ótimo 
+para manutenção e escalabilidade.
+-->
