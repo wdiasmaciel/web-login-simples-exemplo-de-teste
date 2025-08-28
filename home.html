@@ -60,6 +60,7 @@
         .menu {
             border: .2rem solid yellow;
             width: 15rem;
+            padding: .5rem;
         }
 
         .principal {
@@ -72,16 +73,40 @@
             height: 5rem;
         }
 
+        a {
+            text-decoration: none;
+            color: #5e5e5e;
+        }
+
         .opcao {
             display: flex;
+            background-color: #ddd;
+            padding: .5rem;
+            border-radius: .5rem;
+        }
+
+        .opcao:hover {
+            background-color: #ccc;
+            color: black;
+        }
+
+        .opcao:hover .icone-final {
+            opacity: 1;
         }
 
         .icone-inicial {
             margin-right: .5rem;
+            width: 1rem;
         }
 
         .rotulo {
             margin-right: .5rem;
+            flex: 1;
+        }
+
+        .icone-final {
+            opacity: 0;
+            width: 1rem;
         }
     </style>
     <script src="https://kit.fontawesome.com/b581796bdd.js" crossorigin="anonymous"></script>
